@@ -1,5 +1,6 @@
 ---
 title: Shape grammars
+question_verb: are
 slug: shape-grammars
 description: Generating and analyzing visual designs by repeatedly applying rules directly to shapes.
 one_sentence: A shape grammar is a visual production system that generates designs by finding and replacing spatially transformed subshapes.

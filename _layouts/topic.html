@@ -11,7 +11,7 @@ layout: default
 
     <header class="topic-hero">
       <p class="eyebrow">{{ page.category }}</p>
-      <h1>What is {{ page.title | downcase }}?</h1>
+      <h1>What {{ page.question_verb | default: "is" }} {% if page.question_term %}{{ page.question_term }}{% else %}{{ page.title | downcase }}{% endif %}?</h1>
       <p class="topic-deck">{{ page.one_sentence }}</p>
       <dl class="topic-meta">
         <div>

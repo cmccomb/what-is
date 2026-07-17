@@ -1,5 +1,7 @@
 ---
 title: Markov chains
+question_verb: are
+question_term: Markov chains
 slug: markov-chains
 description: Modeling random transitions among states when the current state contains the relevant history.
 one_sentence: A Markov chain is a stochastic process whose next-state distribution depends on the current state, not on the full path used to reach it.

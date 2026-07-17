@@ -1,5 +1,6 @@
 ---
 title: Graph grammars
+question_verb: are
 slug: graph-grammars
 description: Generating and transforming relational structures by rewriting matched subgraphs.
 one_sentence: A graph grammar defines a design language through rules that find a pattern of nodes and edges and replace it with a new graph structure.
