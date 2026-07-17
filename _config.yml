@@ -1,0 +1,31 @@
+title: "What is?"
+description: "Compact, research-grounded explanations of concepts in design, computation, and engineering."
+url: "https://cmccomb.com"
+baseurl: "/what-is"
+repository: "cmccomb/what-is"
+author: "Chris McComb"
+email: "ccm@cmu.edu"
+timezone: "America/New_York"
+lang: "en-US"
+
+collections:
+  topics:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: topics
+    values:
+      layout: topic
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - script
+  - vendor
+
+strict_front_matter: true

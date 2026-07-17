@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<article class="topic-page">
+  <div class="shell">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/' | relative_url }}">What is?</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ page.title }}</span>
+    </nav>
+
+    <header class="topic-hero">
+      <p class="eyebrow">{{ page.category }}</p>
+      <h1>What is {{ page.title | downcase }}?</h1>
+      <p class="topic-deck">{{ page.one_sentence }}</p>
+      <dl class="topic-meta">
+        <div>
+          <dt>Read time</dt>
+          <dd>{{ page.read_time }}</dd>
+        </div>
+        <div>
+          <dt>Last reviewed</dt>
+          <dd>{{ page.updated | date: "%B %Y" }}</dd>
+        </div>
+      </dl>
+    </header>
+
+    <div class="topic-grid">
+      <aside class="topic-nav" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#working-definition">Working definition</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#when-it-is-useful">When it is useful</a></li>
+          <li><a href="#common-mistakes">Common mistakes</a></li>
+          <li><a href="#core-literature">Core literature</a></li>
+          <li><a href="#further-reading-and-resources">Further reading</a></li>
+        </ol>
+      </aside>
+
+      <div class="topic-content prose">
+        {{ content }}
+
+        {% if page.related %}
+        <section class="related-topics" aria-labelledby="related-heading">
+          <h2 id="related-heading">Related topics</h2>
+          <div class="related-links">
+            {% for related_slug in page.related %}
+              {% assign related_topic = site.topics | where_exp: "topic", "topic.slug == related_slug" | first %}
+              {% if related_topic %}
+                <a href="{{ related_topic.url | relative_url }}">{{ related_topic.title }} <span aria-hidden="true">→</span></a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>
