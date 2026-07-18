@@ -114,7 +114,7 @@ a:hover { color: var(--accent); }
   line-height: 1.04;
 }
 
-.topics-section { padding: clamp(1rem, 2.5vw, 2rem) 0 clamp(4rem, 8vw, 7rem); }
+.topics-section { padding: clamp(0.5rem, 1.25vw, 1rem) 0 clamp(4rem, 8vw, 7rem); }
 
 .topic-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 
