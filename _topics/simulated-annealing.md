@@ -8,7 +8,8 @@ order: 6
 read_time: 6 minutes
 updated: 2026-07-17
 related:
-  - configuration-design
+  - optimization
+  - design-space
   - markov-chains
 ---
 ## Working definition
@@ -64,7 +65,7 @@ Applications include routing, scheduling, layout, graph partitioning, configurat
 ## Further reading and resources
 
 - [SciPy `dual_annealing`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html) — a maintained implementation for bounded continuous optimization.
-- [Handbook of Metaheuristics](https://doi.org/10.1007/978-1-4419-1665-5) — places simulated annealing alongside tabu search, evolutionary methods, and other metaheuristics.
+- [Handbook of Metaheuristics](https://doi.org/10.1007/978-3-319-91086-4) — places simulated annealing alongside tabu search, evolutionary methods, and other metaheuristics.
 - [Google OR-Tools routing guides](https://developers.google.com/optimization/routing) — practical combinatorial problems where annealing-like local search can be compared with more structured methods.
 
 ### From our group

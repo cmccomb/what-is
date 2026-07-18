@@ -11,7 +11,7 @@ read_time: 6 minutes
 updated: 2026-07-17
 related:
   - hidden-markov-models
-  - simulated-annealing
+  - reinforcement-learning
   - agent-based-modeling
 ---
 ## Working definition

@@ -11,7 +11,8 @@ read_time: 7 minutes
 updated: 2026-07-17
 related:
   - markov-chains
-  - artificial-intelligence
+  - machine-learning
+  - qualitative-coding
 ---
 ## Working definition
 
@@ -65,7 +66,7 @@ They are most appropriate when a modest number of interpretable states and relat
 
 - [Speech and Language Processing: Hidden Markov Models](https://web.stanford.edu/~jurafsky/slp3/A.pdf) — Daniel Jurafsky and James H. Martin’s accessible chapter with worked algorithms.
 - [`hmmlearn` tutorials](https://hmmlearn.readthedocs.io/en/latest/tutorial.html) — Python examples for fitting and decoding common HMM variants.
-- [Stan User’s Guide: Hidden Markov models](https://mc-stan.org/docs/stan-users-guide/hidden-markov-models.html) — likelihood construction and Bayesian inference for HMMs.
+- [Stan User’s Guide: Hidden Markov models](https://mc-stan.org/docs/stan-users-guide/time-series.html#hidden-markov-models) — likelihood construction and Bayesian inference for HMMs.
 - [Probabilistic Machine Learning: Advanced Topics](https://probml.github.io/pml-book/book2.html) — broader context for state-space and latent-variable sequence models.
 
 ### From our group

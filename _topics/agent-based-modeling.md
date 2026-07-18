@@ -8,9 +8,9 @@ order: 1
 read_time: 6 minutes
 updated: 2026-07-17
 related:
+  - ai-agents
+  - team
   - markov-chains
-  - artificial-intelligence
-  - configuration-design
 ---
 ## Working definition
 
