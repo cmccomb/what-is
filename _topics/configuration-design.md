@@ -12,6 +12,7 @@ related:
   - optimization
   - functional-basis
   - graph-grammars
+  - shape-grammars
 ---
 ## Working definition
 
@@ -49,6 +50,14 @@ A serious configuration model normally contains several layers of knowledge:
 That separation matters. A constraint such as “these ports cannot mate” expresses something different from a preference such as “use the familiar supplier” or a search rule such as “place the most constrained component first.” Encoding all three as interchangeable mathematical expressions may make a solver convenient while making the design rationale opaque.
 
 The design itself can be represented as a graph, grammar, constraint-satisfaction problem, mixed-integer program, or another discrete structure. Solving it generally means proposing or selecting components, instantiating them, assigning values, creating interfaces, checking partial assemblies, and revising or backtracking when conflicts appear.
+
+### Configuration naturally affords grammars
+
+Wielinga and Schreiber's component vocabulary and assembly knowledge map naturally—but not automatically—onto a design grammar. Component types become a vocabulary. A partial assembly becomes the current state. Rules encode valid acts of selection, instantiation, connection, replacement, parameter assignment, or termination. Requirements and constraints determine whether a generated state is acceptable.
+
+A [graph grammar](/what-is/graph-grammars/) is usually the clearest choice when component identity, ports, connectivity, and typed relations must remain explicit. A [shape grammar](/what-is/shape-grammars/) is useful when the configuration is fundamentally spatial and emergent geometry matters. The same artifact can need both: a LEGO assembly has a connection graph, but its geometry also creates spatial opportunities that are not captured by connectivity alone.
+
+This connection clarifies the division of labor. A grammar defines the legal design moves and therefore the reachable configuration space. Constraints establish feasibility. Simulation predicts behavior. Search and optimization decide where to spend effort. Configuration design supplies the domain knowledge that makes all four meaningful.
 
 Wielinga and Schreiber distinguish **uniform methods**, such as constraint satisfaction and linear programming, from **knowledge-intensive methods**, such as case-based configuration, skeletal construction, propose–critique–modify, propose-and-revise, and least commitment. Uniform methods travel well across domains. Knowledge-intensive methods exploit why this particular domain works. The strongest configuration systems usually need both.
 
