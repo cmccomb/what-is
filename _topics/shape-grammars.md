@@ -10,8 +10,8 @@ read_time: 7 minutes
 updated: 2026-07-17
 related:
   - graph-grammars
-  - configuration-design
-  - artificial-intelligence
+  - generative-design
+  - design-space
 ---
 ## Working definition
 
@@ -58,7 +58,7 @@ They are strongest when geometry and perception are the mechanism of interest. A
 ## Core literature
 
 <ul class="reading-list">
-  <li><strong><a href="https://www.shapegrammar.org/">Shape Grammars and the Generative Specification of Painting and Sculpture</a></strong> — George Stiny and James Gips (1972), <em>IFIP Congress</em>.<p>Introduces shape grammars as production systems for defining visual languages.</p></li>
+  <li><strong><a href="https://ocw.mit.edu/courses/4-540-introduction-to-shape-grammars-i-fall-2018/pages/syllabus/">Shape Grammars and the Generative Specification of Painting and Sculpture</a></strong> — George Stiny and James Gips (1972), <em>IFIP Congress</em>.<p>Introduces shape grammars as production systems for defining visual languages; MIT’s graduate shape-grammar course lists it among the primary readings.</p></li>
   <li><strong><a href="https://doi.org/10.1068/b070343">Introduction to Shape and Shape Grammars</a></strong> — George Stiny (1980), <em>Environment and Planning B</em>.<p>Develops the formal machinery for calculating with two- and three-dimensional shapes.</p></li>
   <li><strong><a href="https://doi.org/10.1068/b050005">The Palladian Grammar</a></strong> — George Stiny and William J. Mitchell (1978), <em>Environment and Planning B</em>.<p>A canonical analytic grammar that reconstructs the compositional language of Palladian villa plans.</p></li>
   <li><strong><a href="https://mitpress.mit.edu/9780262693677/shape/">Shape: Talking about Seeing and Doing</a></strong> — George Stiny (2006), MIT Press.<p>A sustained account of why visual calculation differs from symbolic decomposition and why that difference matters for design.</p></li>

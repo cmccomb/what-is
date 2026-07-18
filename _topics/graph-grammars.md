@@ -11,7 +11,7 @@ updated: 2026-07-17
 related:
   - shape-grammars
   - configuration-design
-  - simulated-annealing
+  - generative-design
 ---
 ## Working definition
 
@@ -68,7 +68,7 @@ A graph grammar is often preferable to a shape grammar when component identity a
 
 - [A Tutorial on Graph Transformation](https://ris.utwente.nl/ws/portalfiles/portal/247999750/K_nig2018tutorial.pdf) — a compact introduction to double-pushout rewriting and its formal foundations.
 - [GROOVE](https://groove.ewi.utwente.nl/) — a toolset for graph transformation and state-space exploration.
-- [Attributed Graph Grammar System (AGG)](https://www.user.tu-berlin.de/o.runge/agg/) — a long-running environment for typed, attributed graph transformation.
+- [AGG-supported modeling and analysis](https://depositonce.tu-berlin.de/items/482c229e-07f3-49af-aa08-13f23b4c778b) — a TU Berlin research report demonstrating the long-running environment for typed, attributed graph transformation.
 - [MØD](https://jakobandersen.github.io/mod/) — graph-transformation software oriented toward chemical graphs and reaction rules.
 
 ### From our group

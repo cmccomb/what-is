@@ -8,10 +8,10 @@ order: 2
 read_time: 6 minutes
 updated: 2026-07-17
 related:
-  - shape-grammars
+  - design-space
+  - optimization
+  - functional-basis
   - graph-grammars
-  - simulated-annealing
-  - artificial-intelligence
 ---
 ## Working definition
 
@@ -60,7 +60,7 @@ It is a particularly good framing when feasibility depends on interfaces, not ju
 <ul class="reading-list">
   <li><strong><a href="https://www.ijcai.org/Proceedings/89-2/Papers/087.pdf">Towards a Generic Model of Configuration Tasks</a></strong> — Sanjay Mittal and Felix Frayman (1989), <em>Proceedings of IJCAI</em>.<p>A foundational effort to define configuration as a generic design task and identify the knowledge needed to solve it.</p></li>
   <li><strong><a href="https://doi.org/10.1080/09544829308914787">General Framework for Configuration Design: Part 1—Methodology</a></strong> — Sridhar Kota and Chintal Lee (1993), <em>Journal of Engineering Design</em>.<p>Connects functions, performance goals, constraints, and physical components in an engineering configuration method.</p></li>
-  <li><strong><a href="https://doi.org/10.3233/EAI-1997-123">An Overview of Knowledge-Based Configuration</a></strong> — Markus Stumptner (1997), <em>AI Communications</em>.<p>Surveys logic-, constraint-, and resource-based approaches to assembling complex systems from components.</p></li>
+  <li><strong><a href="https://journals.sagepub.com/doi/10.3233/EAI-1997-123">An Overview of Knowledge-Based Configuration</a></strong> — Markus Stumptner (1997), <em>AI Communications</em>.<p>Surveys logic-, constraint-, and resource-based approaches to assembling complex systems from components.</p></li>
   <li><strong><a href="https://doi.org/10.1016/0048-7333(94)00775-3">The Role of Product Architecture in the Manufacturing Firm</a></strong> — Karl T. Ulrich (1995), <em>Research Policy</em>.<p>Establishes product architecture as the mapping between functional elements and physical components and explains its downstream consequences.</p></li>
 </ul>
 

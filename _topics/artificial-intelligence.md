@@ -8,9 +8,9 @@ order: 5
 read_time: 7 minutes
 updated: 2026-07-17
 related:
-  - agent-based-modeling
-  - hidden-markov-models
-  - simulated-annealing
+  - machine-learning
+  - large-language-models
+  - ai-agents
 ---
 ## Working definition
 

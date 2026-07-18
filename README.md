@@ -1,10 +1,10 @@
 # What is?
 
-A compact, research-grounded field guide to recurring concepts in design, computation, and engineering. The site is intended for quick use in advising meetings, classes, and collaborations, with enough structure to support deeper reading.
+A compact, research-grounded field guide to recurring concepts in design, computation, and engineering. The site is intended for quick use in advising meetings, classes, and collaborations. Its working definitions are deliberately opinionated: each page draws a useful boundary, identifies sloppy usages, and points toward deeper reading.
 
 Public URL: <https://cmccomb.com/what-is/>
 
-## Initial topics
+## Topics
 
 - Agent-based modeling
 - Configuration design
@@ -14,6 +14,25 @@ Public URL: <https://cmccomb.com/what-is/>
 - Simulated annealing
 - Hidden Markov models
 - Markov chains
+- Design space
+- Design heuristics
+- Reinforcement learning
+- Machine learning
+- Deep learning
+- Large language models
+- AI agents
+- Optimization
+- Design fixation
+- A team
+- A dyad
+- Bricolage in design
+- Topology optimization
+- Generative design
+- Latent space
+- Design by analogy
+- The Functional Basis
+- Qualitative coding
+- Pareto frontier
 
 ## Add a topic
 
@@ -39,17 +58,17 @@ Then open <http://127.0.0.1:4000/what-is/>.
 
 ## Suggested next topics
 
-The strongest next cluster would connect the current pages rather than expanding randomly:
+The strongest next cluster would continue documenting methods that recur across the group's work:
 
-- Monte Carlo methods and Markov chain Monte Carlo
-- Bayesian inference
-- Markov decision processes and reinforcement learning
-- Multi-objective optimization and Pareto optimality
-- Evolutionary algorithms
-- Design space exploration and surrogate models
-- Design structure matrices and product architecture
+- Surrogate models and multi-fidelity modeling
+- Uncertainty quantification and robust design
 - Design of experiments
-- Large language models and AI agents
+- Monte Carlo methods, Markov chain Monte Carlo, and Bayesian inference
+- Evolutionary algorithms
+- Product architecture and design structure matrices
+- Protocol analysis and network analysis
+- Cognitive style and collective intelligence
+- Set-based concurrent engineering
 
 ## Deployment
 
