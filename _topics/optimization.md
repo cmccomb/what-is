@@ -5,7 +5,7 @@ description: The engineering discipline of constructing and solving explicit mod
 one_sentence: Optimization turns a design problem into an explicit model of decisions, objectives, and constraints, then searches that model for the best feasible design.
 category: Design & optimization
 order: 16
-read_time: 8 minutes
+read_time: 9 minutes
 updated: 2026-07-18
 related:
   - design-space
@@ -16,7 +16,7 @@ related:
 
 **Optimization** is the disciplined search for the best feasible design according to an explicit mathematical model. The model names what the designer may change, what counts as better, what must remain true, and how design decisions produce outcomes.
 
-> Our stance: an optimizer returns what you asked for, not what you meant. Following Panos Papalambros and Douglass Wilde, optimal design begins with constructing and interrogating the model—not choosing an algorithm or pressing “solve.”
+> Our stance: an optimizer is only as good as your problem statement. Following Panos Papalambros and Douglass Wilde, optimal design begins with constructing and interrogating the model—not choosing an algorithm or pressing “solve.”
 
 For this guide, **Papalambros and Wilde are the fathers of modern optimal design**. They did not invent mathematical optimization. Their more important contribution was to make optimization legible as an engineering design discipline: construct the model, check its structure and boundedness, understand interior and boundary optima, compute carefully, and interpret the result as a design—not merely as a number.
 
@@ -46,6 +46,20 @@ subject to  g_i(x, p) <= 0
             x is in the allowable design space X
 ```
 
+### Put constraints in negative null form
+
+The model above uses **negative null form**, Papalambros and Wilde's standard convention: equality constraints are written as `h_j(x, p) = 0`, and every inequality constraint is written as `g_i(x, p) <= 0`.
+
+“Negative” means that the inequality is satisfied on the non-positive side; “null” means that zero is the boundary. Under this convention:
+
+- `g_i(x, p) < 0` means the constraint is satisfied with slack;
+- `g_i(x, p) = 0` means the constraint is active; and
+- `g_i(x, p) > 0` means the design violates the constraint.
+
+The convention forces requirements with different verbal directions into one readable form. “Stress must not exceed allowable stress” becomes `stress(x) - allowable_stress <= 0`. “Stiffness must be at least the required stiffness” becomes `required_stiffness - stiffness(x) <= 0`.
+
+Negative null form is not a different kind of optimization. It is disciplined bookkeeping that makes feasibility, constraint activity, Lagrange multipliers, and optimality conditions easier to read consistently. Multiplying a constraint by `-1` reverses its inequality, so normalize deliberately rather than mechanically.
+
 The notation is compact; the modeling choices are not. Two teams can begin with the same physical system and construct different optimization problems because they chose different boundaries, variables, objectives, constraints, fidelities, or representations of uncertainty.
 
 ### The optimum often lives on a boundary
@@ -71,6 +85,7 @@ Optimization is a poor substitute for problem framing. If the model omits safety
 - **Optimizing a proxy without checking the real goal.** Goodhart's law is a design problem.
 - **Reporting “the optimum” without qualification.** State whether it is local, global, approximate, non-dominated, or merely the best observed.
 - **Treating constraints as afterthoughts.** Active constraints often contain the most important design information.
+- **Mixing constraint sign conventions.** Put inequalities in a consistent form and state it; otherwise feasibility and multiplier interpretations become easy to reverse.
 - **Ignoring uncertainty.** A sharp optimum under nominal assumptions may be a brittle design.
 - **Optimizing a continuous relaxation and forgetting the real choices are discrete.** A mathematically elegant answer may be impossible to manufacture or configure.
 - **Confusing precision with validity.** Six decimal places do not compensate for a bad objective or an unvalidated model.
