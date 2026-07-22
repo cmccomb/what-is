@@ -3,16 +3,16 @@ title: Artificial intelligence
 slug: artificial-intelligence
 description: Building computational systems that perceive, reason, learn, generate, or act toward goals.
 one_sentence: Artificial intelligence is the field concerned with computational systems that perform tasks requiring perception, reasoning, learning, generation, or goal-directed action.
-category: Artificial intelligence
 order: 5
 read_time: 7 minutes
-updated: 2026-07-17
+updated: 2026-07-22
+detail_title: Intelligence by design
 related:
   - machine-learning
   - large-language-models
   - ai-agents
 ---
-## Working definition
+## Definition
 
 **Artificial intelligence (AI)** is the scientific and engineering field concerned with constructing computational systems that exhibit capabilities associated with intelligent behavior. Those capabilities include perception, knowledge representation, reasoning, planning, learning, communication, generation, and action.
 
@@ -22,7 +22,7 @@ There is no single operational test that covers the whole field. Some traditions
 
 **Machine learning is a subset of AI** focused on improving behavior or predictions from data. **Generative AI** is a subset centered on producing new content. A rule-based planner, learned vision system, and large language model can all be AI systems even though their mechanisms differ substantially.
 
-## How it works
+## Intelligence by design
 
 AI systems typically combine some of these functions:
 
@@ -36,37 +36,36 @@ AI systems typically combine some of these functions:
 
 Modern systems may learn much of this mapping from data, but training is only one stage. The full system also includes data collection, objective design, interfaces, evaluation, monitoring, and human decisions about where the model may act.
 
-## When it is useful
+### Four interfaces, not one magic trick
 
-AI is useful when a task requires flexible mapping from complex inputs to predictions, decisions, or generated outputs and when that mapping can be specified through rules, data, feedback, or some combination. Examples include scientific discovery, medical imaging, language technologies, robotics, scheduling, anomaly detection, and design support.
+For engineering design, our group uses four interfaces to keep “AI in design” from collapsing into one vague bucket:
+
+1. **Use AI in engineering design methods** to expand design capability.
+2. **Create AI capabilities inspired by design-specific challenges**, such as sparse data, changing representations, and expensive evaluation.
+3. **Design methods for engineering systems that themselves use AI**, such as autonomous vehicles.
+4. **Use AI as a tool for engineering-design research**, including experiment planning and the study of human designers.
+
+Most published work still clusters in the first interface, especially early-stage design, representation learning, and design-space exploration. The thinner interfaces may be more consequential because they ask design researchers to shape AI—not merely consume it.
 
 The relevant question is not simply “Can AI do this?” It is “Which capability is needed, what evidence would establish acceptable performance, and how will failure be detected and managed?” A conventional algorithm or human process may be preferable when rules are stable, errors are costly, data are weak, or interpretability and recourse dominate marginal predictive performance.
 
-## Common mistakes
-
+### The intelligence is not in the label
 - **Using AI as a synonym for machine learning or large language models.** These are important parts of the field, not its full extent.
 - **Equating benchmark performance with system usefulness.** Deployment changes inputs, incentives, workflows, and consequences.
 - **Assuming apparent fluency implies grounded understanding.** Behavior must be evaluated against the actual task and failure modes.
 - **Ignoring the objective.** An AI system can optimize a measurable proxy while undermining the real goal.
 - **Treating human oversight as a slogan.** Oversight requires authority, information, time, and a workable intervention path.
 
-## Core literature
+## Resources
 
-<ul class="reading-list">
-  <li><strong><a href="https://doi.org/10.1093/mind/LIX.236.433">Computing Machinery and Intelligence</a></strong> — Alan M. Turing (1950), <em>Mind</em>.<p>Reframes an abstract question about machine thought as an operational inquiry into intelligent behavior.</p></li>
-  <li><strong><a href="https://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html">A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence</a></strong> — John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon (1955).<p>The proposal that named the field and articulated an ambitious program spanning language, abstraction, learning, and creativity.</p></li>
-  <li><strong><a href="https://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach</a></strong> — Stuart Russell and Peter Norvig (4th ed., 2020).<p>A comprehensive field map organized around intelligent agents, including search, uncertainty, learning, perception, language, and robotics.</p></li>
-  <li><strong><a href="https://doi.org/10.1609/aimag.v26i4.1848">A (Very) Brief History of Artificial Intelligence</a></strong> — Bruce G. Buchanan (2005), <em>AI Magazine</em>.<p>A compact account of the intellectual traditions and early systems that shaped the field.</p></li>
-</ul>
-
-## Further reading and resources
-
-- [CS50’s Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai/) — a free, project-based course covering search, uncertainty, optimization, learning, neural networks, and language.
-- [Stanford Encyclopedia of Philosophy: Artificial Intelligence](https://plato.stanford.edu/entries/artificial-intelligence/) — a careful treatment of competing definitions and philosophical commitments.
-- [AI Magazine](https://ojs.aaai.org/aimagazine/) — accessible articles from the Association for the Advancement of Artificial Intelligence.
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — a practical framework for governing and evaluating risks across an AI system’s lifecycle.
-
-### From our group
-
-- [Artificial Intelligence and Engineering Design](https://doi.org/10.1115/1.4053111) — maps three interfaces between AI and engineering design: applying AI to design, developing AI around design-specific challenges, and studying the effects of AI on design work.
-- [Expanding the Generative Power of Large Language Models for Design Through Formal Design Grammars and Languages](https://doi.org/10.1115/1.4070095) — tests how LLMs and formal grammars can complement one another in generative design.
+- **[Computing Machinery and Intelligence](https://doi.org/10.1093/mind/LIX.236.433)** — Alan M. Turing (1950), <em>Mind</em>. Reframes an abstract question about machine thought as an operational inquiry into intelligent behavior.
+- **[A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence](https://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html)** — John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon (1955). The proposal that named the field and articulated an ambitious program spanning language, abstraction, learning, and creativity.
+- **[Artificial Intelligence: A Modern Approach](https://aima.cs.berkeley.edu/)** — Stuart Russell and Peter Norvig (4th ed., 2020). A comprehensive field map organized around intelligent agents, including search, uncertainty, learning, perception, language, and robotics.
+- **[A (Very) Brief History of Artificial Intelligence](https://doi.org/10.1609/aimag.v26i4.1848)** — Bruce G. Buchanan (2005), <em>AI Magazine</em>. A compact account of the intellectual traditions and early systems that shaped the field.
+- **[CS50’s Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai/)** — a free, project-based course covering search, uncertainty, optimization, learning, neural networks, and language.
+- **[Stanford Encyclopedia of Philosophy: Artificial Intelligence](https://plato.stanford.edu/entries/artificial-intelligence/)** — a careful treatment of competing definitions and philosophical commitments.
+- **[AI Magazine](https://ojs.aaai.org/aimagazine/)** — accessible articles from the Association for the Advancement of Artificial Intelligence.
+- **[NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)** — a practical framework for governing and evaluating risks across an AI system’s lifecycle.
+- **[Artificial Intelligence and Engineering Design](https://doi.org/10.1115/1.4053111)** — **From our group.** maps four interfaces between AI and engineering design: AI for design, design-inspired AI, design methods for AI-enabled systems, and AI as a design-research tool.
+- **[Expanding the Generative Power of Large Language Models for Design Through Formal Design Grammars and Languages](https://doi.org/10.1115/1.4070095)** — **From our group.** tests how LLMs and formal grammars can complement one another in generative design.
+{: .reading-list }

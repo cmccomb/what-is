@@ -5,16 +5,16 @@ question_term: AI agents
 slug: ai-agents
 description: Computational systems that close a loop from perception and state to goal-directed action in an environment.
 one_sentence: An AI agent is a computational system that perceives context, maintains task-relevant state or goals, chooses actions, and closes the loop by acting or recommending actions in an environment.
-category: Artificial intelligence
 order: 15
 read_time: 8 minutes
-updated: 2026-07-17
+updated: 2026-07-22
+detail_title: No free agents
 related:
   - artificial-intelligence
   - large-language-models
   - reinforcement-learning
 ---
-## Working definition
+## Definition
 
 **An AI agent** is a computational system that repeatedly perceives context, maintains task-relevant state or goals, chooses an action, and closes the loop by acting—or deliberately recommending action—in an environment. Agents may be rule-based or learned, embodied or purely digital, reactive or planning-intensive, and individual or multi-agent.
 
@@ -24,7 +24,9 @@ Following the framing used in our Boeing engineering workshops, four enduring ag
 
 The human relationship matters too. In our Human–AI Teaming Matrix, an AI system may function as a reactive problem-focused **tool**, proactive problem-focused **partner**, reactive process-focused **analytics system**, or proactive process-focused **coach**. An agent can therefore recommend, collaborate, or manage process without taking unconstrained external action.
 
-## How it works
+The two axes do real conceptual work: **what the AI focuses on**—the design problem or the design process—and **how it engages**—reactively or proactively. Our process-manager experiments occupy the proactive, process-focused corner: the system monitors team behavior while work is happening and intervenes to improve the process rather than trying to design the artifact itself.
+
+## No free agents
 
 1. **Observe:** receive user input, sensor data, files, tool results, or environment state.
 2. **Update state:** maintain goals, beliefs, plans, memory, and task history.
@@ -34,36 +36,29 @@ The human relationship matters too. In our Human–AI Teaming Matrix, an AI syst
 
 Modern LLM agents often use a ReAct-style loop, retrieval, tool calling, memory, explicit planning, and self-critique. Those components can improve capability, but every additional loop also creates latency, cost, and opportunities for compounding error.
 
-## When it is useful
-
+### Where agency earns its keep
 Agents are useful for well-structured environments where a task requires multiple contingent steps: gathering evidence, using software tools, navigating a design workflow, monitoring a process, or coordinating specialized models. They are especially valuable when intermediate outcomes can be checked.
+
+Objective performance is not enough to establish good agency. In our human–AI teaming studies, hybrid teams could preserve solution quality after an unexpected problem change while still communicating and coordinating worse than all-human teams. An agent can help the artifact and hurt the team at the same time.
 
 Agents are risky when permissions are broad, success is ambiguous, actions are irreversible, feedback is weak, or the environment contains adversarial content. Human approval should be attached to consequential actions, not invoked as a vague safety slogan.
 
-## Common mistakes
-
+### Agency theater
 - **Calling every chatbot an agent.** A single response without state or action closure is a model interaction.
 - **Defining agency as maximum autonomy.** Bounded, reviewable agency is often more useful.
 - **Ignoring historical agent systems.** Tool use, memory, coordination, and expert knowledge are not new problems.
 - **Letting the model invent completion criteria.** Goals, permissions, stopping rules, and escalation paths should be explicit.
 - **Using multi-agent systems as theater.** More agent personas do not guarantee better decomposition, evidence, or decisions.
 
-## Core literature
+## Resources
 
-<ul class="reading-list">
-  <li><strong><a href="https://doi.org/10.1017/S0269888900008122">Intelligent Agents: Theory and Practice</a></strong> — Michael Wooldridge and Nicholas Jennings (1995), <em>Knowledge Engineering Review</em>.<p>Defines agents through autonomy, social ability, reactivity, and proactivity—the most durable boundary for the term.</p></li>
-  <li><strong><a href="https://doi.org/10.1145/176789.176792">Agents That Reduce Work and Information Overload</a></strong> — Pattie Maes (1994), <em>Communications of the ACM</em>.<p>A foundational account of interface agents that learn from and act for users.</p></li>
-  <li><strong><a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models</a></strong> — Shunyu Yao and colleagues (2022).<p>Formalizes a widely used loop in which language-model reasoning alternates with external actions and observations.</p></li>
-</ul>
-
-## Further reading and resources
-
-- [Artificial Intelligence: A Modern Approach](https://aima.cs.berkeley.edu/) — organizes the field around agents that perceive and act.
-- [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/) — practical introductions to tool use, workflows, and current frameworks.
-- [OSWorld](https://os-world.github.io/) and [GAIA](https://huggingface.co/gaia-benchmark) — benchmarks that expose the gap between fluent models and reliable environment use.
-
-### From our group
-
-- [Focus and Modality: Defining a Roadmap to Future AI–Human Teaming in Design](https://doi.org/10.1017/pds.2023.191) — introduces the tool/partner/analytics/coach matrix used in our workshop framing.
-- [A Real-Time Artificial Intelligence Process Manager for Engineering Design](https://doi.org/10.1115/DETC2022-88609) — demonstrates a proactive, process-focused agent that guides human teams.
-- [Symmetry Heuristics for Stable Reinforcement Learning Design Agents](https://doi.org/10.31224/3615) — a design agent whose action policy is stabilized with domain knowledge.
+- **[Intelligent Agents: Theory and Practice](https://doi.org/10.1017/S0269888900008122)** — Michael Wooldridge and Nicholas Jennings (1995), <em>Knowledge Engineering Review</em>. Defines agents through autonomy, social ability, reactivity, and proactivity—the most durable boundary for the term.
+- **[Agents That Reduce Work and Information Overload](https://doi.org/10.1145/176789.176792)** — Pattie Maes (1994), <em>Communications of the ACM</em>. A foundational account of interface agents that learn from and act for users.
+- **[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)** — Shunyu Yao and colleagues (2022). Formalizes a widely used loop in which language-model reasoning alternates with external actions and observations.
+- **[Artificial Intelligence: A Modern Approach](https://aima.cs.berkeley.edu/)** — organizes the field around agents that perceive and act.
+- **[Hugging Face Agents Course](https://huggingface.co/learn/agents-course/)** — practical introductions to tool use, workflows, and current frameworks.
+- **[OSWorld](https://os-world.github.io/)** and [GAIA](https://huggingface.co/gaia-benchmark) — benchmarks that expose the gap between fluent models and reliable environment use.
+- **[Focus and Modality: Defining a Roadmap to Future AI–Human Teaming in Design](https://doi.org/10.1017/pds.2023.191)** — **From our group.** introduces the tool/partner/analytics/coach matrix used in our workshop framing.
+- **[A Real-Time Artificial Intelligence Process Manager for Engineering Design](https://doi.org/10.1115/DETC2022-88609)** — **From our group.** demonstrates a proactive, process-focused agent that guides human teams.
+- **[Symmetry Heuristics for Stable Reinforcement Learning Design Agents](https://doi.org/10.31224/3615)** — **From our group.** a design agent whose action policy is stabilized with domain knowledge.
+{: .reading-list }

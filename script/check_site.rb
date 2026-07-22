@@ -8,15 +8,7 @@ require "yaml"
 ROOT = Pathname.new(__dir__).join("..").expand_path
 SITE = ROOT.join("_site")
 TOPICS = ROOT.join("_topics")
-REQUIRED_FIELDS = %w[title slug description one_sentence category order read_time updated].freeze
-REQUIRED_HEADINGS = [
-  "## Working definition",
-  "## How it works",
-  "## When it is useful",
-  "## Common mistakes",
-  "## Core literature",
-  "## Further reading and resources"
-].freeze
+REQUIRED_FIELDS = %w[title slug description one_sentence order read_time updated detail_title].freeze
 
 errors = []
 topic_files = TOPICS.glob("*.md").sort
@@ -27,7 +19,8 @@ orders = []
 
 topic_files.each do |path|
   text = path.read
-  front_matter = text.split(/^---\s*$\n/, 3)[1]
+  parts = text.split(/^---\s*$\n/, 3)
+  front_matter = parts[1]
   unless front_matter
     errors << "#{path.basename}: missing YAML front matter"
     next
@@ -42,9 +35,16 @@ topic_files.each do |path|
   slugs << slug
   orders << data["order"]
   errors << "#{path.basename}: filename and slug differ" unless path.basename(".md").to_s == slug
-  REQUIRED_HEADINGS.each do |heading|
-    errors << "#{path.basename}: missing '#{heading}'" unless text.include?(heading)
-  end
+
+  body = parts[2].to_s
+  headings = body.scan(/^## (.+?)\s*$/).flatten
+  errors << "#{path.basename}: expected exactly three level-two headings" unless headings.length == 3
+  errors << "#{path.basename}: first level-two heading must be 'Definition'" unless headings.first == "Definition"
+  errors << "#{path.basename}: detail heading must match detail_title" unless headings[1] == data["detail_title"]
+  errors << "#{path.basename}: final level-two heading must be 'Resources'" unless headings.last == "Resources"
+
+  resources = body.split(/^## Resources\s*$/, 2)[1].to_s
+  errors << "#{path.basename}: Resources should recommend at least three links" if resources.scan(/https?:\/\//).length < 3
 end
 errors << "topic slugs are not unique" unless slugs.uniq.length == slugs.length
 errors << "topic order values are not unique" unless orders.uniq.length == orders.length

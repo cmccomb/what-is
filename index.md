@@ -22,7 +22,7 @@ permalink: /
     <div class="topic-cards">
       {% assign ordered_topics = site.topics | sort: "order" %}
       {% for topic in ordered_topics %}
-        {% capture search_text %}{{ topic.title }} {{ topic.description }} {{ topic.category }}{% endcapture %}
+        {% capture search_text %}{{ topic.title }} {{ topic.description }} {{ topic.one_sentence }}{% endcapture %}
         <a class="topic-card" href="{{ topic.url | relative_url }}" data-topic-search="{{ search_text | downcase | strip | escape }}">
           <span>
             <h2>{{ topic.title }}</h2>

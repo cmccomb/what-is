@@ -10,7 +10,6 @@ layout: default
     </nav>
 
     <header class="topic-hero">
-      <p class="eyebrow">{{ page.category }}</p>
       <h1>What {{ page.question_verb | default: "is" }} {% if page.question_term %}{{ page.question_term }}{% else %}{{ page.title | downcase }}{% endif %}?</h1>
       <p class="topic-deck">{{ page.one_sentence }}</p>
       <dl class="topic-meta">
@@ -29,12 +28,9 @@ layout: default
       <aside class="topic-nav" aria-label="On this page">
         <p>On this page</p>
         <ol>
-          <li><a href="#working-definition">Working definition</a></li>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#when-it-is-useful">When it is useful</a></li>
-          <li><a href="#common-mistakes">Common mistakes</a></li>
-          <li><a href="#core-literature">Core literature</a></li>
-          <li><a href="#further-reading-and-resources">Further reading</a></li>
+          <li><a href="#definition">Definition</a></li>
+          <li><a href="#{{ page.detail_title | slugify }}">{{ page.detail_title }}</a></li>
+          <li><a href="#resources">Resources</a></li>
         </ol>
       </aside>
 
