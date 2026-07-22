@@ -3,10 +3,10 @@ title: Configuration design
 slug: configuration-design
 description: Building systems by selecting, arranging, and connecting available components under requirements and constraints.
 one_sentence: Configuration design creates an artifact by selecting component instances, assigning their values, and arranging their interfaces so the whole satisfies requirements and constraints.
-category: Design & optimization
 order: 2
 read_time: 9 minutes
-updated: 2026-07-18
+updated: 2026-07-22
+detail_title: Configure it out
 related:
   - design-space
   - optimization
@@ -14,7 +14,7 @@ related:
   - graph-grammars
   - shape-grammars
 ---
-## Working definition
+## Definition
 
 **Configuration design** is the synthesis of a system from available component types and allowable relations. A solution identifies which component instances are present, how many are needed, what parameter values they take, and how they are arranged or connected so that the resulting assembly satisfies requirements and constraints.
 
@@ -24,7 +24,7 @@ This guide leans heavily on Bob Wielinga and Guus Schreiber’s 1997 account. Th
 
 Configuration design therefore includes much more than sales configurators. Products, software stacks, manufacturing systems, teams, schedules, experiments, workflows, and emergency repairs can all be configuration problems. The task sits between open-ended concept generation and purely parametric design: concept generation may invent new building blocks, while parametric design assumes the architecture and mainly tunes values. Real design problems usually contain all three.
 
-## How it works
+## Configure it out
 
 Wielinga and Schreiber organize the space along three useful dimensions:
 
@@ -51,6 +51,8 @@ That separation matters. A constraint such as “these ports cannot mate” expr
 
 The design itself can be represented as a graph, grammar, constraint-satisfaction problem, mixed-integer program, or another discrete structure. Solving it generally means proposing or selecting components, instantiating them, assigning values, creating interfaces, checking partial assemblies, and revising or backtracking when conflicts appear.
 
+Observed designers do not move through those decisions in a clean waterfall. In our configuration studies, hidden Markov models recovered four recurring procedural states that move roughly from topology toward shape and parameter design. Strong designers also tune parameters opportunistically earlier than a textbook sequence would suggest. The lesson is not “copy this order”; it is that **what to configure next** is itself design knowledge.
+
 ### Configuration naturally affords grammars
 
 Wielinga and Schreiber's component vocabulary and assembly knowledge map naturally—but not automatically—onto a design grammar. Component types become a vocabulary. A partial assembly becomes the current state. Rules encode valid acts of selection, instantiation, connection, replacement, parameter assignment, or termination. Requirements and constraints determine whether a generated state is acceptable.
@@ -67,8 +69,7 @@ Wielinga and Schreiber illustrate the task with a small rowing boat assembled fr
 
 The example is deceptively deep. Because the bricks are discrete, the target dimensions cannot necessarily be met exactly. A designer must find a feasible assembly whose aggregate properties come close enough. Each brick has geometry and connection possibilities; the boat has properties no brick possesses alone. That local-to-global jump is the heart of configuration design.
 
-## When it is useful
-
+### Why almost everything is configuration
 Configuration design is useful whenever some design vocabulary already exists but the final architecture does not. That describes an enormous share of engineering and organized work:
 
 - **Physical systems:** LEGO models, gear trains, hydraulic circuits, trusses, spacecraft subsystems, product platforms, and modular families.
@@ -89,8 +90,7 @@ Engineers on the ground configured an adapter, tested it in an altitude chamber,
 
 That example is why configuration design is a powerful default lens: feasibility and performance often emerge from interfaces among available things, not from the isolated merit of any one component.
 
-## Common mistakes
-
+### Where the lens stops
 - **Reducing configuration to catalog shopping.** Selection is only one operation. Instantiation, allocation, interfacing, arrangement, parameter assignment, and system-level verification are often the harder parts.
 - **Pretending component choice is just value assignment.** A solver may encode “motor type” as one variable, but that shortcut can erase differences among types, instances, ports, and relations. Wielinga and Schreiber warn that representational convenience can destroy ontological clarity and make knowledge harder to maintain or reuse.
 - **Assuming all requirements and constraints are known at the start.** Formal configuration often makes this assumption; real design regularly violates it. Decisions activate regulations, reveal incompatibilities, and generate new constraints. Apollo 13’s required CO₂-removal capacity and usable component set changed radically after the explosion.
@@ -100,26 +100,19 @@ That example is why configuration design is a powerful default lens: feasibility
 - **Treating the catalog as neutral.** Available component types, partial assemblies, and allowable relations define what can be discovered. A restricted vocabulary produces a restricted design space.
 - **Calling every design decision configuration.** The lens is broad, not limitless. If the task must invent a new component type, causal principle, or requirement, configuration alone is insufficient; conceptual, functional, or transformational design is also occurring.
 
-## Core literature
+## Resources
 
-<ul class="reading-list">
-  <li><strong><a href="https://doi.org/10.1109/64.585104">Configuration-Design Problem Solving</a></strong> — Bob J. Wielinga and Guus Schreiber (1997), <em>IEEE Expert</em>.<p>The anchor for this guide. It maps configuration problems by their components, assemblies, and requirements; separates categories of configuration knowledge; and compares uniform with knowledge-intensive problem-solving methods. An <a href="https://guusschreiber.nl/wp-content/uploads/2025/05/wielinga97a.pdf">author-hosted copy</a> is freely available.</p></li>
-  <li><strong><a href="https://www.ijcai.org/Proceedings/89-2/Papers/087.pdf">Towards a Generic Model of Configuration Tasks</a></strong> — Sanjay Mittal and Felix Frayman (1989), <em>Proceedings of IJCAI</em>.<p>A foundational effort to define configuration as a generic design task and identify the knowledge needed to solve it.</p></li>
-  <li><strong><a href="https://doi.org/10.1080/09544829308914787">General Framework for Configuration Design: Part 1—Methodology</a></strong> — Sridhar Kota and Chintal Lee (1993), <em>Journal of Engineering Design</em>.<p>Connects functions, performance goals, constraints, and physical components in an engineering configuration method.</p></li>
-  <li><strong><a href="https://journals.sagepub.com/doi/10.3233/EAI-1997-123">An Overview of Knowledge-Based Configuration</a></strong> — Markus Stumptner (1997), <em>AI Communications</em>.<p>Surveys logic-, constraint-, and resource-based approaches to assembling complex systems from components.</p></li>
-  <li><strong><a href="https://doi.org/10.1016/0048-7333(94)00775-3">The Role of Product Architecture in the Manufacturing Firm</a></strong> — Karl T. Ulrich (1995), <em>Research Policy</em>.<p>Establishes product architecture as the mapping between functional elements and physical components and explains its downstream consequences.</p></li>
-</ul>
-
-## Further reading and resources
-
-- [“Houston, We’ve Had a Problem”](https://www.nasa.gov/history/houston-weve-had-a-problem/) — NASA’s detailed history of the Apollo 13 rescue, including the materials, ground test, crew procedure, and performance of the improvised LiOH-canister adapter.
-- [Apollo 13 LiOH Canister Breakthrough Test](https://ntrs.nasa.gov/citations/19720021432) — the July 1970 NASA technical memorandum documenting the emergency system test and canister-change analysis.
-- [Joining Constraint Satisfaction Problems and Configurable CAD Product Models](https://doi.org/10.3390/a15090318) — an open, step-by-step bridge from constraint models to a CAD configurator.
-- [OR-Tools CP-SAT guide](https://developers.google.com/optimization/cp/cp_solver) — practical documentation for constraint programming over discrete decisions.
-- [Design Structure Matrix methods](https://mitpress.mit.edu/9780262528887/design-structure-matrix-methods-and-applications/) — tools for representing and analyzing component and process dependencies.
-- [Product Design and Development](https://www.mheducation.com/highered/product/product-design-and-development-ulrich.html) — a broader engineering-design treatment of product architecture and concept development.
-
-### From our group
-
-- [Mining Process Heuristics from Designer Action Data via Hidden Markov Models](https://doi.org/10.1115/1.4037308) — analyzes how people move among topology, shape, and parameter decisions while solving configuration problems.
-- [Data on the Configuration Design of Internet-Connected Home Cooling Systems by Engineering Students](https://doi.org/10.1016/j.dib.2017.08.050) — an open behavioral dataset for studying human configuration-design processes.
+- **[Configuration-Design Problem Solving](https://doi.org/10.1109/64.585104)** — Bob J. Wielinga and Guus Schreiber (1997), <em>IEEE Expert</em>. The anchor for this guide. It maps configuration problems by their components, assemblies, and requirements; separates categories of configuration knowledge; and compares uniform with knowledge-intensive problem-solving methods. An <a href="https://guusschreiber.nl/wp-content/uploads/2025/05/wielinga97a.pdf">author-hosted copy</a> is freely available.
+- **[Towards a Generic Model of Configuration Tasks](https://www.ijcai.org/Proceedings/89-2/Papers/087.pdf)** — Sanjay Mittal and Felix Frayman (1989), <em>Proceedings of IJCAI</em>. A foundational effort to define configuration as a generic design task and identify the knowledge needed to solve it.
+- **[General Framework for Configuration Design: Part 1—Methodology](https://doi.org/10.1080/09544829308914787)** — Sridhar Kota and Chintal Lee (1993), <em>Journal of Engineering Design</em>. Connects functions, performance goals, constraints, and physical components in an engineering configuration method.
+- **[An Overview of Knowledge-Based Configuration](https://journals.sagepub.com/doi/10.3233/EAI-1997-123)** — Markus Stumptner (1997), <em>AI Communications</em>. Surveys logic-, constraint-, and resource-based approaches to assembling complex systems from components.
+- **[The Role of Product Architecture in the Manufacturing Firm](https://doi.org/10.1016/0048-7333(94)00775-3)** — Karl T. Ulrich (1995), <em>Research Policy</em>. Establishes product architecture as the mapping between functional elements and physical components and explains its downstream consequences.
+- **[“Houston, We’ve Had a Problem”](https://www.nasa.gov/history/houston-weve-had-a-problem/)** — NASA’s detailed history of the Apollo 13 rescue, including the materials, ground test, crew procedure, and performance of the improvised LiOH-canister adapter.
+- **[Apollo 13 LiOH Canister Breakthrough Test](https://ntrs.nasa.gov/citations/19720021432)** — the July 1970 NASA technical memorandum documenting the emergency system test and canister-change analysis.
+- **[Joining Constraint Satisfaction Problems and Configurable CAD Product Models](https://doi.org/10.3390/a15090318)** — an open, step-by-step bridge from constraint models to a CAD configurator.
+- **[OR-Tools CP-SAT guide](https://developers.google.com/optimization/cp/cp_solver)** — practical documentation for constraint programming over discrete decisions.
+- **[Design Structure Matrix methods](https://mitpress.mit.edu/9780262528887/design-structure-matrix-methods-and-applications/)** — tools for representing and analyzing component and process dependencies.
+- **[Product Design and Development](https://www.mheducation.com/highered/product/product-design-and-development-ulrich.html)** — a broader engineering-design treatment of product architecture and concept development.
+- **[Mining Process Heuristics from Designer Action Data via Hidden Markov Models](https://doi.org/10.1115/1.4037308)** — **From our group.** analyzes how people move among topology, shape, and parameter decisions while solving configuration problems.
+- **[Data on the Configuration Design of Internet-Connected Home Cooling Systems by Engineering Students](https://doi.org/10.1016/j.dib.2017.08.050)** — **From our group.** an open behavioral dataset for studying human configuration-design processes.
+{: .reading-list }
